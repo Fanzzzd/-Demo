@@ -10,15 +10,15 @@ function toggleLights(x, y) {
 
 function toggleAdjacentLights(x, y) {
     if (x > 0) lights[x-1][y] = !lights[x-1][y];
-    if (x < 1) lights[x+1][y] = !lights[x+1][y];
+    if (x < 2) lights[x+1][y] = !lights[x+1][y];  // 修改边界条件
     if (y > 0) lights[x][y-1] = !lights[x][y-1];
-    if (y < 1) lights[x][y+1] = !lights[x][y+1];
+    if (y < 2) lights[x][y+1] = !lights[x][y+1];  // 修改边界条件
 }
 
 function updateBoard() {
-    for (let i = 0; i < 2; i++) {
-        for (let j = 0; j < 2; j++) {
-            let light = document.getElementById("gameBoard").children[i * 2 + j];
+    for (let i = 0; i < 3; i++) {  // 更新循环条件
+        for (let j = 0; j < 3; j++) {  // 更新循环条件
+            let light = document.getElementById("gameBoard").children[i * 3 + j];  // 更新索引
             light.className = lights[i][j] ? "light on" : "light";
         }
     }
