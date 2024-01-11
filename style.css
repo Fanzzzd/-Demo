@@ -22,16 +22,16 @@ body {
 
 #gameBoard {
     display: grid;
-    grid-template-columns: auto auto;
-    gap: 10px;
+    grid-template-columns: repeat(3, auto);  // 改为 3 列
+    gap: 15px;
     padding: 20px;
     background-color: #333;
     border-radius: 10px;
 }
 
 .light {
-    width: 50px;
-    height: 50px;
+    width: 60px;  // 增加灯的大小
+    height: 60px;  // 增加灯的大小
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     cursor: pointer;
